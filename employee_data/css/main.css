@@ -29,6 +29,7 @@
   box-sizing: border-box;
   padding-left: 15px;
   padding-right: 15px;
+  padding-bottom: 30px;
 }
 
 body {
@@ -331,28 +332,41 @@ ul.bulleted li:before {
   left: 0;
   color: white;
   font-size: .5em;
-  padding: 3px 2px 2px;
+  padding: 3px 3px 2px;
   border-radius: 2px;
   text-align: center;
-  width: 25px;
+  min-width: 25px;
+  box-sizing: content-box;
 }
 
-ul.bulleted .in {
+ul.bulleted .in,
+ul.bulleted .empty {
   color: #5A6772;
 }
 
-ul.bulleted .in:before {
+ul.bulleted .in:before,
+ul.bulleted .empty:before {
   content: "IN";
   background-color: #5fcf80;
 }
 
-ul.bulleted .out {
+ul.bulleted .empty:before {
+  content: "EMPTY";
+}
+
+ul.bulleted .out,
+ul.bulleted .full {
   color: #A7B4BF;
 }
 
-ul.bulleted .out:before {
+ul.bulleted .out:before,
+ul.bulleted .full:before {
   content: "OUT";
   background-color: #ed5a5a;
+}
+
+ul.bulleted .full:before {
+  content: "FULL";
 }
 
 footer p {
